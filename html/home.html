@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Concentra Innovative Engineering | Home</title>
+    <link rel="stylesheet" type="text/css" href="../uploads/bootstrap.min.css">
+    <script src="../uploads/jquery-3.2.1.js"></script>
+    <script src="../uploads/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../uploads/animate.css">
+    <script src="../uploads/sitescript.js"></script>
+    <script src="../uploads/wow.min.js"></script>
+    <script src="../uploads/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../uploads/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../uploads/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="../uploads/owl.theme.default.min.css">
+    <script src="../uploads/owl.carousel.min.js"></script>
+    <script src="../uploads/SmoothScroll.js"></script>
+    <script src="../uploads/jquery.validate.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    (function($) {
+        jQuery(window).on("load", function() {
+
+            jQuery(".se-pre-con").fadeOut("slow");
+
+            // jQuery(function() {
+            //     jQuery(document).scroll(function() {
+            //         var top_ht = jQuery(window).height();
+            //         if (jQuery(this).scrollTop() >= jQuery('.product_img').offset().top - top_ht) {
+            //             jQuery(".product_img").addClass("rot_anim");
+            //         } else {
+            //             jQuery(".product_img").removeClass("rot_anim");
+            //         }
+            //     });
+            // });
+
+            jQuery(".test_in .disc").mCustomScrollbar({
+                setHeight: 120,
+                theme: "inset-2-dark"
+            });
+            jQuery(".chef_info_in").mCustomScrollbar({
+                setHeight: 200,
+                theme: "inset-2-dark"
+            });
+            (function() {
+                jQuery(function() {
+                    var byRow = jQuery('body').hasClass('test-rows');
+                    jQuery('.hm_p').each(function() {
+                        jQuery(this).children('.hm_c').matchHeight({
+                            byRow: byRow
+                        });
+                    });
+                });
+            })();
+
+            // jQuery(function() {
+            //     jQuery('.product_img').find('img').each(function(index) {
+            //         var ht_c = jQuery(this).height();
+            //         jQuery('.product_img p').eq(index).css('width', ht_c);
+            //         jQuery('.product_img p').eq(index).css('height', ht_c);
+            //     });
+            // });
+        });
+    })(jQuery);
+    </script>
+    <script type="text/javascript">
+    (function($) {
+        //Function to animate slider captions
+        function doAnimations(elems) {
+            //Cache the animationend event in a variable
+            var animEndEv = 'webkitAnimationEnd animationend';
+            elems.each(function() {
+                var $this = $(this),
+                    $animationType = $this.data('animation');
+                $this.addClass($animationType).one(animEndEv, function() {
+                    $this.removeClass($animationType);
+                });
+            });
+        }
+        //Variables on page load
+        var $myCarousel = $('#myCarousel'),
+            $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+        //Initialize carousel
+        $myCarousel.carousel();
+        //Animate captions in first slide on page load
+        doAnimations($firstAnimatingElems);
+        //Pause carousel
+        $myCarousel.carousel('pause');
+        //Other slides to be animated on carousel slide event
+        $myCarousel.on('slide.bs.carousel', function(e) {
+            var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+            doAnimations($animatingElems);
+        });
+    })(jQuery);
+    </script>
+    <script>
+    jQuery(function() {
+        jQuery('.form_sec .form-inline').addClass('cnt_form_val');
+    });
+    </script>
+    <script>
+    jQuery(document).ready(function() {
+
+
+        new WOW().init();
+
+
+        // Read more Hover
+        jQuery('.about_us_sec_in .rdm_btn a').mouseenter(function() {
+            jQuery(this).addClass('jello animated');
+        });
+        jQuery('.about_us_sec_in .rdm_btn a').mouseleave(function() {
+            jQuery(this).removeClass('jello animated');
+        });
+
+        // Read more Hover
+        jQuery('.serv_carl_in .disc p:last-child a').mouseenter(function() {
+            jQuery(this).addClass('jello animated');
+        });
+        jQuery('.serv_carl_in .disc p:last-child a').mouseleave(function() {
+            jQuery(this).removeClass('jello animated');
+        });
+
+        // Read more Hover
+        jQuery('.serv_carl_in').mouseenter(function() {
+            jQuery(this).addClass('shake animated');
+        });
+        jQuery('.serv_carl_in').mouseleave(function() {
+            jQuery(this).removeClass('shake animated');
+        });
+
+        // Read more Hover
+        jQuery('.products_sec_disc .rdm_btn a').mouseenter(function() {
+            jQuery(this).addClass('jello animated');
+        });
+        jQuery('.products_sec_disc .rdm_btn a').mouseleave(function() {
+            jQuery(this).removeClass('jello animated');
+        });
+        // Menu Amin
+        jQuery('.m_tog').click(function() {
+            jQuery('.menu_disc').toggleClass('bounceIn animated');
+            jQuery('.m_tog').toggleClass('m_tog_act');
+        });
+
+        jQuery('.drop_toggle').click(function() {
+            jQuery('.drop_down').toggleClass('drop_down_show');
+            jQuery('.drop_toggle a').toggleClass('drop_toggle_show');
+            jQuery('.drop_down a').removeClass('drop_toggle_show');
+        });
+
+        jQuery(document).on('click', function(e) {
+            if (jQuery(e.target).closest(".menu_sec").length === 0) {
+                jQuery(".menu_disc").removeClass("bounceIn animated");
+                jQuery(".m_tog").removeClass("m_tog_act");
+                jQuery(".drop_down").removeClass("drop_down_show");
+            }
+        });
+
+        jQuery(document).keydown(function(e) {
+
+            if (e.keyCode == 27) {
+                jQuery('.menu_disc').removeClass('bounceIn animated');
+                jQuery(".drop_down").removeClass("drop_down_show");
+                jQuery('.m_tog').removeClass('m_tog_act');
+            }
+            if (e.keyCode == 77) {
+                jQuery('.menu_disc').toggleClass('bounceIn animated');
+                jQuery('.m_tog').toggleClass('m_tog_act');
+            }
+        });
+
+        jQuery(function() {
+            jQuery('.banner_sec').find('img').each(function(index) {
+                var src = jQuery(this).attr('src');
+                jQuery('.banner_sec').eq(index).css('background-image', 'url(' + src + ')');
+            });
+        });
+
+
+        jQuery('.serv_carl_trig').owlCarousel({
+            items: 3,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 8000,
+            margin: 0,
+            lazyLoad: true,
+            smartSpeed: 300,
+            autoplayHoverPause: true,
+            nav: true,
+            navText: "",
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                320: {
+                    items: 1,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    nav: false
+                },
+                640: {
+                    items: 2,
+                    nav: false
+                },
+                768: {
+                    items: 3,
+                    nav: true
+                },
+                992: {
+                    items: 3,
+                    nav: true
+                }
+            }
+        })
+
+
+        jQuery(".feat_trig").validate({
+            rules: {
+                Name: {
+                    required: true,
+                    minlength: 3
+                },
+                Email: {
+                    required: true,
+                    email: true
+                },
+                Contact_Number: {
+                    required: true,
+                    number: true,
+                    minlength: 10,
+                    maxlength: 10
+                }
+            },
+            messages: {
+                Name: {
+                    required: "Please enter your name",
+                    minlength: "Invalid Name!!"
+                },
+                Email: "Please enter a valid email address",
+                Contact_Number: {
+                    required: "Please enter a valid number",
+                    number: "Field must contain numbers",
+                    minlength: "Example:- 9620XXXXXX | 8041XXXXXX",
+                    maxlength: "Example:- 9620XXXXXX | 8041XXXXXX"
+                }
+            },
+            errorElement: "em",
+            errorPlacement: function(error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("help-block");
+
+                // Add `has-feedback` class to the parent div.form-group
+                // in order to add icons to inputs
+                element.parents(".col-sm-5").addClass("has-feedback");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+
+                if (!element.next("span")[0]) {
+                    jQuery("<span class='glyphicon glyphicon-remove form-control-feedback'></span>").insertAfter(element);
+                }
+            },
+            success: function(label, element) {
+                if (!jQuery(element).next("span")[0]) {
+                    jQuery("<span class='glyphicon glyphicon-ok form-control-feedback'></span>").insertAfter(jQuery(element));
+                }
+            },
+            highlight: function(element, errorClass, validClass) {
+                jQuery(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                jQuery(element).next("span").addClass("glyphicon-remove").removeClass("glyphicon-ok");
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                jQuery(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+                jQuery(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
+            }
+        });
+
+
+    });
+    </script>
+</head>
+
+<body>
+    <div class="main_div flt">
+        <div class="holder_div flt">
+            
+        </div>
+    </div>
+</body>

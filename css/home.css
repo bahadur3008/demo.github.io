@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Questrial');
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #787878;
+}
+
+a:focus,
+a:active,
+a:hover {
+    outline: none ! important;
+}
+
+#table_inner_content {
+    float: left;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+p {
+    margin: 0 0 0 0 !important;
+    padding: 0 0 0 0 !important;
+}
+
+.nopad {
+    padding: 0 !important;
+}
+
+.flt {
+    float: left;
+    width: 100%;
+}
+
+.col_pad {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main {
+    text-align: center;
+}
+
+.navbar-brand {
+    display: none;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.pagecontent {
+    float: left;
+    width: 100%;
+}
+
+.carousel-fade .carousel-inner .item {
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+.carousel-fade .carousel-inner .carousel-control {
+    z-index: 2;
+}
+
+.pagecontent {
+    float: left;
+    width: 100%;
+}
+
+
+/*Header Section*/
